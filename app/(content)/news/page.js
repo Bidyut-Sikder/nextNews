@@ -1,21 +1,16 @@
-
-
-import NewsList from '@/components/news-list';
-import { getAllNews } from '@/lib/news';
-
+import NewsList from "@/components/news-list";
+import { getAllNews } from "@/lib/news";
 
 const NewsPage = async () => {
+  const news = await getAllNews();
 
-    const news =await getAllNews()
+  return (
+    <>
+      <h1>News page</h1>
 
-    return (
-        <>
-            <h1>News page</h1>
-
-            <NewsList news={news} />
-
-        </>
-    );
+      <NewsList news={news} />
+    </>
+  );
 };
 
-export default NewsPage;  
+export default NewsPage;
